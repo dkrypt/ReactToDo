@@ -1,0 +1,19 @@
+.todolist {
+    width: 50vw;
+    margin: 0 auto;
+}
+.inputTodo {
+    margin-bottom: 20px;
+}
+.inputTodo > input[type="text"]{
+    font-size: 1.5em;
+}
+.inputTodo > input {
+    width: 100%;
+    padding: 0;
+    height: 60px;
+    border: none;
+    background-color: #f1faee;
+    text-align: center;
+}
+

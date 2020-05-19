@@ -1,0 +1,32 @@
+.todo {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    min-height: 30px;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+    background-color: #a8dadc;
+    margin-bottom: 5px;
+}
+
+.desc {
+    color: #1d3557;
+}
+.controls {
+    color: #1d3557;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.markComplete {
+    margin: 2px;
+}
+.delete {
+    margin: 2px;
+}
+.markComplete:hover {
+    cursor: pointer;
+}
+.delete:hover {
+    cursor: pointer;
+}
