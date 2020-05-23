@@ -1,21 +1,46 @@
 import React from 'react';
 import './App.css';
 import TodoList from './components/TodoList';
-import { StoreProvider, createStore } from 'easy-peasy';
-import model from './model';
-
-const store = createStore(model);
+import useStickyState from './StickyStateHook.js'
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+  const [todos, setTodos] = useStickyState([], "localState");
+  const todoOperations = {
+    addTodo: ((e) => {
+      if (e.which === 13) {
+        const newTodo = {
+          id: uuidv4(),
+          text: e.target.value,
+          done: false
+        }
+        setTodos([...todos, newTodo]);
+        // addTodoToStore(todo);
+        e.target.value = ''
+      }
+    }),
+    deleteTodo : id => {
+      const newTodoList = [...todos];
+      const todoToDel = newTodoList.find(todo => todo.id === id);
+      const index = newTodoList.indexOf(todoToDel);
+      newTodoList.splice(index, 1);
+      setTodos(newTodoList);
+    },
+    markDone: id => {
+      const newTodoList = [...todos];
+      const el = newTodoList.find(todo => todo.id == id);
+      const index = newTodoList.indexOf(el);
+      newTodoList[index].done = !newTodoList[index].done;
+      setTodos(newTodoList);
+    }
+  };
   return (
-    <StoreProvider store={store}>
     <div className="App">
       <div className="todoheader">
                 todos
             </div>
-      <TodoList />
+      <TodoList todoOperations={todoOperations} todos={todos}/>
       </div>
-      </StoreProvider>
   );
 }
 
