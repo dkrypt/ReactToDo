@@ -1,23 +1,23 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import './components/style/themes/Hoomans.css';
+// import './components/style/themes/SoftwareEngineer.css';
 import TodoList from './components/TodoList';
 import useStickyState from './StickyStateHook.js'
 import { v4 as uuidv4 } from 'uuid';
+import Header from './components/Header';
 
 function App() {
   const [todos, setTodos] = useStickyState([], "localState");
+  const [localTodo, setLocalTodos] = useState([]);
+
   const todoOperations = {
-    addTodo: ((e) => {
-      if (e.which === 13) {
-        const newTodo = {
-          id: uuidv4(),
-          text: e.target.value,
-          done: false
-        }
-        setTodos([...todos, newTodo]);
-        // addTodoToStore(todo);
-        e.target.value = ''
+    addTodo: ((todoText) => {
+      const newTodo = {
+        id: uuidv4(),
+        text: todoText,
+        done: false
       }
+      setTodos([...todos, newTodo]);
     }),
     deleteTodo : id => {
       const newTodoList = [...todos];
@@ -36,9 +36,7 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="todoheader">
-                todos
-            </div>
+      <Header />
       <TodoList todoOperations={todoOperations} todos={todos}/>
       </div>
   );

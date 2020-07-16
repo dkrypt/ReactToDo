@@ -1,0 +1,158 @@
+/*===============*/
+/* App.JS Styles */
+/*===============*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* background-color: #E5E7EB; */
+    background-color: rgb(231, 231, 231);
+}
+/*===================*/
+/* Header.JS Styles*/
+/*===================*/
+.titleHeader {
+    text-align: center;
+    font-size: 2em;
+    color: #E5E7EB;
+    background-color: #545479;
+    margin-bottom: 10px;
+}
+.iconLinks {
+    font-size: 2em;
+    color: #27294B;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: end;
+}
+.iconLink {
+    cursor: pointer;
+    margin: 0px 10px;
+}
+.controlButtons {
+    margin: 20px auto;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+/*===================*/
+/* TodoList.JS Styles*/
+/*===================*/
+.todolist {
+    width: 50vw;
+    margin: 0 auto;
+}
+.inputTodo {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    /* justify-items: stretch; */
+}
+.inputTodo > input[type="text"]{
+    font-size: 1.2em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #27294B;
+}
+.inputTodo > input::placeholder{
+    /* font-size: 1.2em; */
+    color: rebeccapurple;
+    margin-left: 10px;
+}
+.inputTodo > input:focus {
+    outline: none;
+}
+.inputTodo > input {
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    border: none;
+    /* background-color: #A1A0C8; */
+    /* text-align: center; */
+}
+.addTodoButton {
+    font-size: 15px;
+    text-align: center;
+    height: 40px;
+    border-radius: 5px;
+    background: rgb(84, 84, 121, 0.1);
+    line-height: 40px;
+    transition: all 0.3s ease 0s;
+}
+.addTodoButton:hover {
+    /* background-color: #5EC2A4; */
+    background: rgb(20, 133, 130, 0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+/*================*/
+/* Todo.JS Styles*/
+/*================*/
+.todo {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    min-height: 20px;
+    height: auto;
+    padding: 2px 10px;
+    align-items: center;
+    /* background-color: #a8dadc; */
+    margin-bottom: 5px;
+    background: rgb(20, 133, 130, 0.2);
+    /* background: rgb(187, 235, 231); */
+}
+.todo:hover {
+    transform: scale(1.01);
+    background: rgb(20, 133, 130, 0.4);
+    /* background: rgb(84, 84, 121, 0.1); */
+}
+
+.desc {
+    color: #1d3557;
+    display: grid;
+    grid-template-columns: 5% 95%;
+}
+.controls {
+    align-self: start;
+    color: #1d3557;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* align-content: flex-start; */
+}
+.markComplete {
+    margin: 2px;
+}
+.delete {
+    margin: 2px;
+}
+.markComplete:hover {
+    cursor: pointer;
+}
+.delete:hover {
+    cursor: pointer;
+}
+
+/*Button*/
+.buttonComp {
+    color: #27294B !important;
+    /* opacity: 50%; */
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    background: rgb(84, 84, 121, 0.1);
+    padding: 10px;
+    /* border-radius: 5px; */
+    display: inline-block;
+    border: none;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.buttonComp:hover {
+    background: rgb(20, 133, 130, 0.4);
+    font-weight: bold;
+    transform: scale(1.01);
+    /* letter-spacing: 1px; */
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.2s ease 0s;
+}
